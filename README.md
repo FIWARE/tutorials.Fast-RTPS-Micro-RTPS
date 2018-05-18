@@ -1,4 +1,4 @@
-# getting started with Fast-RTPS
+# Getting started with Fast-RTPS
 
 <p align="justify"> *eprosima Fast RTPS* is a C++ implementation of the RTPS (Real Time Publish Subscribe) protocol, which provides publisher-subscriber communications over unreliable transports such as UDP, 
 as defined and maintained by the Object Management Group (OMG) consortium. RTPS is also the wire interoperability protocol defined for the Data Distribution
