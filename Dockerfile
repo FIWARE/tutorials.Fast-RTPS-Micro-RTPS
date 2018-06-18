@@ -49,7 +49,9 @@ RUN apt-get update && apt-get install -y git
 RUN git clone --recursive https://github.com/eProsima/Fast-RTPS.git /home/Fast-RTPS
 
 RUN mkdir /home/Fast-RTPS/build && \
-	cd /home/Fast-RTPS/build && \
+	cd /home/Fast-RTPS/ && \
+	git checkout 201a393b500a35d56d3e46b5b6c2c6a96e85928e && \
+	cd build && \
 	cmake -DTHIRDPARTY=ON -DBUILD_JAVA=ON .. && \
 	make  && \
 	make install

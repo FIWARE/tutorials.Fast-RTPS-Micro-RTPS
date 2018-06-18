@@ -54,7 +54,7 @@ docker run -i -t --name fastrtps_container fastrtps:v1 bin/bash
 
 ### Example usage
 
-At this point, you have Fast-RTPS fully supported in the Docker entrainer environment. We can now run a _HelloWorld_ example. In the example, we will send a set of messages from a publisher to a subscriber using Fast-RTPS protocol. First navigate to the _HelloWorld_ example folder:
+At this point, you have Fast-RTPS installed in the Docker entrainer environment. We can now run a _HelloWorld_ example. In the example, we will send a set of messages from a publisher to a subscriber using Fast-RTPS protocol. First navigate to the _HelloWorld_ example folder:
 
 ```console
 cd home/Fast-RTPS/examples/C++/HelloWorldExample/
@@ -120,5 +120,5 @@ Message HelloWorld 10 RECEIVED
 Subscriber unmatched
 ```
 
-Other examples are available in the _examples_ folder, which are beyond the scope of this tutorial. 
+Other examples are available in the _examples_ folder, which are beyond the scope of this tutorial. Other examples are available in the _examples_ folder, which are beyond the scope of this tutorial. For more information, please refer to the official documentation of Fast-RTPS: http://eprosima-fast-rtps.readthedocs.io/en/latest/.
 
