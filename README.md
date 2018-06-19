@@ -41,7 +41,7 @@ Now you can proceed with the installation.
 
 ```console
 git clone https://github.com/flemic/tutorials.Fast-RTPS
-cd Fast-RTPS
+cd tutorials.Fast-RTPS
 docker build -t fastrtps:v1 .
 ```
 
