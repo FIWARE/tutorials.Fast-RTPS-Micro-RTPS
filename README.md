@@ -1,6 +1,8 @@
+# Getting started with Fast-RTPS and Micro-RTPS
+
 # Getting started with Fast-RTPS
 
-<p align="justify"> eprosima Fast RTPS is a C++ implementation of the RTPS (Real Time Publish Subscribe) protocol, which provides publisher-subscriber communications over unreliable transports such as UDP, 
+<p align="justify"> [eprosima](http://www.eprosima.com/) Fast RTPS is a C++ implementation of the RTPS (Real Time Publish Subscribe) protocol, which provides publisher-subscriber communications over unreliable transports such as UDP, 
 as defined and maintained by the Object Management Group (OMG) consortium. RTPS is also the wire interoperability protocol defined for the Data Distribution
 Service (DDS) standard, again by the OMG. eProsima Fast RTPS holds the benefit of being standalone and up-to-date, as most vendor solutions either implement RTPS as a tool to implement DDS or use past versions of the specification.
 </p>
@@ -40,7 +42,7 @@ Now you can proceed with the installation.
 ```console
 git clone https://github.com/flemic/tutorials.Fast-RTPS
 cd tutorials.Fast-RTPS
-docker build -t fastrtps:v1 .
+docker build -f Dockerfile_Fast-RTPS -t fastrtps:v1 .
 ```
 
 This will (after some time) build the Docker image to your host machine. How you can run it in a Docker container with:
@@ -54,7 +56,7 @@ docker run -i -t --name fastrtps_container fastrtps:v1 bin/bash
 
 At this point, you have Fast-RTPS installed in the Docker entrainer environment. We can now run a _HelloWorld_ example. In the example, we will send a set of messages from a publisher to a subscriber using Fast-RTPS protocol, as shown in the figure. 
 
-<img src="https://github.com/flemic/tutorials.Fast-RTPS/blob/master/schema.png" width="600" class="center">
+<img src="https://github.com/flemic/tutorials.Fast-RTPS/blob/master/schema1.png" width="600" class="center">
 
 First navigate to the _HelloWorld_ example folder:
 
@@ -122,5 +124,105 @@ Message HelloWorld 10 RECEIVED
 Subscriber unmatched
 ```
 
-Other examples are available in the _examples_ folder, which are beyond the scope of this tutorial. Other examples are available in the _examples_ folder, which are beyond the scope of this tutorial. For more information, please refer to the official documentation of Fast-RTPS: http://eprosima-fast-rtps.readthedocs.io/en/latest/.
+Other examples are available in the _examples_ folder, which are beyond the scope of this tutorial. Other examples are available in the _examples_ folder, which are beyond the scope of this tutorial. For more information, please refer to the [official documentation](http://eprosima-fast-rtps.readthedocs.io/en/latest/) of Fast-RTPS.
 
+# Getting started with Micro-RTPS
+
+<p align="justify"> eprosima Micro-RTPS is a software solution that provides publisher-subscriber communication between eXtremely Resource Constrained Environments (XRCEs) and a DDS network. In particular, Micro-RTPS implements a client-server protocol to enable resource-constrained devices (clients) to take part in DDS communications. Micro-RTPS agent (server) enables possible this communication by acting behalf of Micro-RTPS clients and enabling them to take part as DDS publishers and/or subscribers in the DDS Global Data Space.
+</p>
+
+## Installation Guide
+
+You can install Micro-RTPS with all its dependencies from the precompiled Docker image. You will first need Docker:
+
+### Prerequisites
+
+To keep things simple both components will be run using [Docker](https://www.docker.com). **Docker** is a
+container technology which allows to different components isolated into their respective environments. 
+
+* To install Docker on Windows follow the instructions [here](https://docs.docker.com/docker-for-windows/)
+* To install Docker on Mac follow the instructions [here](https://docs.docker.com/docker-for-mac/)
+* To install Docker on Linux follow the instructions [here](https://docs.docker.com/install/)
+
+The goal of this tutorial is to provide you with a simple _getting started_ guide on how to install and use Micro-RTPS. In the consequent tutorial we will discuss how Micro-RTPS (and therefore ROS2) can be connected to the Orion Context Broker using FIROS2.
+
+### Installation
+
+Now you can proceed with the installation.
+
+```console
+git clone https://github.com/flemic/tutorials.Fast-RTPS
+cd tutorials.Fast-RTPS
+docker build -f Dockerfile_Micro-RTPS -t micrortps:v1 .
+```
+
+This will (after some time) build the Docker image to your host machine. How you can run it in a Docker container with:
+
+```console
+docker run -i -t --name micrortps_container micrortps:v1 bin/bash
+```
+
+
+### Example usage
+
+At this point, you have Micro-RTPS installed in the Docker entrainer environment. We can now run a _HelloWorld_ example. In the example, we will send a set of messages from a Micro-RTPS publisher to a Micro-RTPS subscriber through a Micro-RTPS agent, as shown in the figure. 
+
+<img src="https://github.com/flemic/tutorials.Fast-RTPS/blob/master/schema2.png" width="600" class="center">
+
+We first have to start the Micro-RTPS agent which will received messages sent by the Micro-RTPS publisher and forward them to the subscriber. In order to do that, execute the following commands, which will result in the Micro-RTPS agent being started on UDP port 2018:
+
+```console
+cd /usr/local/bin
+MicroRTPSAgent udp 2018
+```
+
+Now we will need two more terminals in our Docker environment. In one of the terminals, we will start the Micro-RTPS publisher, while in the other we will start the subscriber. To open second and third terminals, open two bash terminals and in both of them run the following:
+
+```console
+docker exec -i -t micrortps_container /bin/bash
+``` 
+
+First we start a subscriber:
+
+```console
+cd /usr/local/examples/micrortps/SubscribeHelloWorldClient/bin/
+./PublishHelloWorldClient udp 127.0.0.1 2018
+```
+
+Then we start the publisher in the other terminal:
+
+```console
+cd /usr/local/examples/micrortps/PublishHelloWorldClient/bin/
+/SubscribeHelloWorldClient udp 127.0.0.1 2018
+```
+
+The messages should be automatically sent by the publisher and received by the subscriber. If everything is OK, in your publisher and subscriber terminals respectively you should see something like:
+
+```console
+<< UDP mode => ip: 127.0.0.1 - port: 2018 >>
+Send topic: Hello DDS world!, count: 1
+Send topic: Hello DDS world!, count: 2
+Send topic: Hello DDS world!, count: 3
+Send topic: Hello DDS world!, count: 4
+Send topic: Hello DDS world!, count: 5
+Send topic: Hello DDS world!, count: 6
+Send topic: Hello DDS world!, count: 7
+Send topic: Hello DDS world!, count: 8
+...
+```
+
+
+```console
+<< UDP mode => ip: 127.0.0.1 - port: 2018 >>
+Receive topic: Hello DDS world!, count: 1
+Receive topic: Hello DDS world!, count: 2
+Receive topic: Hello DDS world!, count: 3
+Receive topic: Hello DDS world!, count: 4
+Receive topic: Hello DDS world!, count: 5
+Receive topic: Hello DDS world!, count: 6
+Receive topic: Hello DDS world!, count: 7
+Receive topic: Hello DDS world!, count: 8
+...
+```
+
+Other examples are available in the _examples_ folder, which are beyond the scope of this tutorial. For more information, please refer to the [official documentation](http://micro-rtps.readthedocs.io/en/latest/) of Micro-RTPS.
