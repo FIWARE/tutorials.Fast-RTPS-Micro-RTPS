@@ -127,7 +127,7 @@ Other examples are available in the _examples_ folder, which are beyond the scop
 
 eProsima Micro-RTPS is a software solution that provides publisher-subscriber communication between eXtremely Resource Constrained Environments (XRCEs) and a DDS network. In particular, Micro-RTPS implements a client-server protocol to enable resource-constrained devices (clients) to take part in DDS communications. Micro-RTPS agent (server) enables possible this communication by acting behalf of Micro-RTPS clients and enabling them to take part as DDS publishers and/or subscribers in the DDS Global Data Space.
 
-The goal of this tutorial is to provide you with a simple _getting started_ guide on how to install and use Micro-RTPS. In the consequent tutorial we will discuss how Micro-RTPS (and therefore ROS2) can be connected to the Orion Context Broker using FIROS2.
+The goal of this tutorial is to provide you with a simple _getting started_ guide on how to install and use Micro-RTPS. 
 
 ### Installation
 
