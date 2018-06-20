@@ -1,7 +1,7 @@
 version: '3'
 services:
-  fast_rtps:
-    container_name: fast_rtps
+  fastrtps:
+    container_name: fastrtps
     build: 
       context: ./Fast-RTPS
       dockerfile: Dockerfile

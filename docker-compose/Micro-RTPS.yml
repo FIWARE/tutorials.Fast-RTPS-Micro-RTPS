@@ -1,7 +1,7 @@
 version: '3'
 services:
-  micro_rtps:
-    container_name: micro_rtps
+  micrortps:
+    container_name: micrortps
     build: 
       context: ./Micro-RTPS
       dockerfile: Dockerfile
