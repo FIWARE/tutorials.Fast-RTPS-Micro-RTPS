@@ -53,7 +53,7 @@ docker run -i -t --name fastrtps_container fastrtps:v1 bin/bash
 
 At this point, you have Fast-RTPS installed in the Docker entrainer environment. We can now run a _HelloWorld_ example. In the example, we will send a set of messages from a publisher to a subscriber using Fast-RTPS protocol, as shown in the figure. 
 
-<img src="https://github.com/flemic/tutorials.Fast-RTPS/blob/master/schema1.png" width="600" class="center">
+<img src="https://github.com/flemic/tutorials.Fast-RTPS/Fast-RTPS/blob/master/schema1.png" width="600" class="center">
 
 First navigate to the _HelloWorld_ example folder:
 
@@ -150,7 +150,7 @@ docker run -i -t --name micrortps_container micrortps:v1 bin/bash
 
 At this point, you have Micro-RTPS installed in the Docker entrainer environment. We can now run a _HelloWorld_ example. In the example, we will send a set of messages from a Micro-RTPS publisher to a Micro-RTPS subscriber through a Micro-RTPS agent, as shown in the figure. 
 
-<img src="https://github.com/flemic/tutorials.Fast-RTPS/blob/master/schema2.png" width="600" class="center">
+<img src="https://github.com/flemic/tutorials.Fast-RTPS/Micro-RTPS/blob/master/schema2.png" width="600" class="center">
 
 We first have to start the Micro-RTPS agent which will received messages sent by the Micro-RTPS publisher and forward them to the subscriber. In order to do that, execute the following commands, which will result in the Micro-RTPS agent being started on UDP port 2018:
 
