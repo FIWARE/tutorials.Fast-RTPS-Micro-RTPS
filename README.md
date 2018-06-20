@@ -39,7 +39,7 @@ To start the installation, do the following:
 ```console
 git clone https://github.com/flemic/tutorials.Fast-RTPS
 cd tutorials.Fast-RTPS/Fast-RTPS/
-docker build -f Dockerfile -t fastrtps:v1 .
+docker build -t fastrtps:v1 .
 ```
 
 This will (after some time) build the Docker image to your host machine. How you can run it in a Docker container with:
@@ -136,7 +136,7 @@ To start the installation, do the following:
 ```console
 git clone https://github.com/flemic/tutorials.Fast-RTPS
 cd tutorials.Fast-RTPS/Micro-RTPS/
-docker build -f Dockerfile_Micro-RTPS -t micrortps:v1 .
+docker build -t micrortps:v1 .
 ```
 
 This will (after some time) build the Docker image to your host machine. How you can run it in a Docker container with:
