@@ -55,5 +55,3 @@ RUN mkdir /home/Fast-RTPS/build && \
 	cmake -DTHIRDPARTY=ON -DBUILD_JAVA=ON .. && \
 	make  && \
 	make install
-
-

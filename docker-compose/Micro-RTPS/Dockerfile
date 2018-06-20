@@ -83,3 +83,5 @@ RUN mkdir /micro-RTPS/build && \
 	cd .. && \
 	ldconfig /usr/local/lib/
 
+CMD ["bin/bash"]
+

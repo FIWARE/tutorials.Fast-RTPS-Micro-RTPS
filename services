@@ -31,13 +31,13 @@ case "${command}" in
 		stoppingContainers
 		echo -e "Installing Fast-RTPS."
 		echo ""
-		docker-compose -f docker-compose/Fast-RTPS.yml up
+		docker-compose -f docker-compose/Fast-RTPS.yml up --build -d
 		;;
 	 "micro")
 		stoppingContainers
 		echo -e "Installing Micro-RTPS."
 		echo ""
-		docker-compose -f docker-compose/Micro-RTPS.yml up
+		docker-compose -f docker-compose/Micro-RTPS.yml up --build -d
 		;;
 	"stop")
 		stoppingContainers

@@ -39,7 +39,7 @@ To start the installation, do the following:
 ```console
 git clone https://github.com/flemic/tutorials.Fast-RTPS
 cd tutorials.Fast-RTPS/Fast-RTPS/
-docker build -t fastrtps:v1 .
+./services fast
 ```
 
 This will (after some time) build the Docker image to your host machine. How you can run it in a Docker container with:
@@ -121,7 +121,7 @@ Message HelloWorld 10 RECEIVED
 Subscriber unmatched
 ```
 
-Other examples are available in the _examples_ folder, which are beyond the scope of this tutorial. Other examples are available in the _examples_ folder, which are beyond the scope of this tutorial. For more information, please refer to the [official documentation](http://eprosima-fast-rtps.readthedocs.io/en/latest/) of Fast-RTPS.
+Other examples are available in the _examples_ folder, which are beyond the scope of this tutorial. Other examples are available in the _examples_ folder, which are beyond the scope of this tutorial. For more information, please refer to the [official Fast-RTPS documentation](http://eprosima-fast-rtps.readthedocs.io/en/latest/).
 
 # Getting started with Micro-RTPS
 
@@ -134,9 +134,7 @@ The goal of this tutorial is to provide you with a simple _getting started_ guid
 To start the installation, do the following:
 
 ```console
-git clone https://github.com/flemic/tutorials.Fast-RTPS
-cd tutorials.Fast-RTPS/Micro-RTPS/
-docker build -t micrortps:v1 .
+./services micro
 ```
 
 This will (after some time) build the Docker image to your host machine. How you can run it in a Docker container with:
@@ -208,4 +206,4 @@ Receive topic: Hello DDS world!, count: 8
 ...
 ```
 
-Other examples are available in the _examples_ folder, which are beyond the scope of this tutorial. For more information, please refer to the [official documentation](http://micro-rtps.readthedocs.io/en/latest/) of Micro-RTPS.
+Other examples are available in the _examples_ folder, which are beyond the scope of this tutorial. For more information, please refer to the [official Micro-RTPS documentation](http://micro-rtps.readthedocs.io/en/latest/).
