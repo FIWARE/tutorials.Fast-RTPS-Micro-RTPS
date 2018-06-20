@@ -1,5 +1,16 @@
 # Getting started with Fast-RTPS and Micro-RTPS
 
+You can install Fast-RTPS and Micro-RTPS with all their dependencies from the precompiled Docker images. You will first need Docker:
+
+### Prerequisites
+
+To keep things simple both components will be run using [Docker](https://www.docker.com). **Docker** is a
+container technology which allows to different components isolated into their respective environments. 
+
+* To install Docker on Windows follow the instructions [here](https://docs.docker.com/docker-for-windows/)
+* To install Docker on Mac follow the instructions [here](https://docs.docker.com/docker-for-mac/)
+* To install Docker on Linux follow the instructions [here](https://docs.docker.com/install/)
+
 # Getting started with Fast-RTPS
 
 [eProsima](http://www.eprosima.com/) Fast RTPS is a C++ implementation of the RTPS (Real Time Publish Subscribe) protocol, which provides publisher-subscriber communications over unreliable transports such as UDP, 
@@ -21,22 +32,9 @@ eProsima Fast RTPS has been adopted by multiple organizations in many sectors in
 
 The goal of this tutorial is to provide you with a simple _getting started_ guide on how to install and use Fast-RTPS. In the consequent tutorial we will discuss how Fast-RTPS (and therefore ROS2) can be connected to the Orion Context Broker using FIROS2.
 
-## Installation Guide
-
-You can install Fast-RTPS with all its dependencies from the precompiled Docker image. You will first need Docker:
-
-### Prerequisites
-
-To keep things simple both components will be run using [Docker](https://www.docker.com). **Docker** is a
-container technology which allows to different components isolated into their respective environments. 
-
-* To install Docker on Windows follow the instructions [here](https://docs.docker.com/docker-for-windows/)
-* To install Docker on Mac follow the instructions [here](https://docs.docker.com/docker-for-mac/)
-* To install Docker on Linux follow the instructions [here](https://docs.docker.com/install/)
-
 ### Installation
 
-Now you can proceed with the installation.
+To start the installation, do the following:
 
 ```console
 git clone https://github.com/flemic/tutorials.Fast-RTPS
@@ -129,24 +127,11 @@ Other examples are available in the _examples_ folder, which are beyond the scop
 
 eProsima Micro-RTPS is a software solution that provides publisher-subscriber communication between eXtremely Resource Constrained Environments (XRCEs) and a DDS network. In particular, Micro-RTPS implements a client-server protocol to enable resource-constrained devices (clients) to take part in DDS communications. Micro-RTPS agent (server) enables possible this communication by acting behalf of Micro-RTPS clients and enabling them to take part as DDS publishers and/or subscribers in the DDS Global Data Space.
 
-## Installation Guide
-
-You can install Micro-RTPS with all its dependencies from the precompiled Docker image. You will first need Docker:
-
-### Prerequisites
-
-To keep things simple both components will be run using [Docker](https://www.docker.com). **Docker** is a
-container technology which allows to different components isolated into their respective environments. 
-
-* To install Docker on Windows follow the instructions [here](https://docs.docker.com/docker-for-windows/)
-* To install Docker on Mac follow the instructions [here](https://docs.docker.com/docker-for-mac/)
-* To install Docker on Linux follow the instructions [here](https://docs.docker.com/install/)
-
 The goal of this tutorial is to provide you with a simple _getting started_ guide on how to install and use Micro-RTPS. In the consequent tutorial we will discuss how Micro-RTPS (and therefore ROS2) can be connected to the Orion Context Broker using FIROS2.
 
 ### Installation
 
-Now you can proceed with the installation.
+To start the installation, do the following:
 
 ```console
 git clone https://github.com/flemic/tutorials.Fast-RTPS
