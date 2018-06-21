@@ -1,19 +1,29 @@
-# Getting started with Fast-RTPS and Micro-RTPS
+[![FIWARE Banner](https://fiware.github.io/tutorials.Fast-RTPS-Micro-RTPS/img/fiware.png)](https://www.fiware.org/developers)
 
-You can install Fast-RTPS and Micro-RTPS with all their dependencies from the precompiled Docker images. You will first need Docker:
+This is an Introductory Tutorial to the [Fast-RTPS](https://eprosima-fast-rtps.readthedocs.io) and [Micro-RTPS](http://micro-rtps.readthedocs.io) protocols for RTPS (Real Time Publish Subscribe) as used in robotics and extremely constrained devices.
+The enablers of the FIWARE platform are not directly involved at this low level of communication but a complete understanding of the protocols is required before proceeding to connect robotic devices to the FIWARE System.
 
-### Prerequisites
+The tutorial introduces a series of exercises which can be run directly from within a [Docker](https://www.docker.com) container, no HTTP calls are required.
 
-To keep things simple both components will be run using [Docker](https://www.docker.com). **Docker** is a
-container technology which allows to different components isolated into their respective environments. 
+# Contents
 
-* To install Docker on Windows follow the instructions [here](https://docs.docker.com/docker-for-windows/)
-* To install Docker on Mac follow the instructions [here](https://docs.docker.com/docker-for-mac/)
-* To install Docker on Linux follow the instructions [here](https://docs.docker.com/install/)
+- [What is Fast-RTPS?](#what-is-fast-rtps)
+- [What is Micro-RTPS?](#what-is-micro-rtps)
+- [Prerequisites](#prerequisites)
+  * [Docker](#docker)
+  * [Cygwin](#cygwin)
+- [Start Up](#start-up)
+- [Introduction to Fast-RTPS](#introduction-to-fast-rtps)
+    + [Example usage](#example-usage)
+- [Introduction to Micro-RTPS](#introduction-to-micro-rtps)
+    + [Example usage](#example-usage-1)
+- [Next Steps](#next-steps)
 
-# Getting started with Fast-RTPS
 
-[eProsima](http://www.eprosima.com/) Fast RTPS is a C++ implementation of the RTPS (Real Time Publish Subscribe) protocol, which provides publisher-subscriber communications over unreliable transports such as UDP, 
+
+# What is Fast-RTPS?
+
+[eProsima](http://www.eprosima.com/) [Fast-RTPS](https://eprosima-fast-rtps.readthedocs.io) is a C++ implementation of the RTPS (Real Time Publish Subscribe) protocol, which provides publisher-subscriber communications over unreliable transports such as UDP, 
 as defined and maintained by the Object Management Group (OMG) consortium. RTPS is also the wire interoperability protocol defined for the Data Distribution
 Service (DDS) standard, again by the OMG. eProsima Fast RTPS holds the benefit of being standalone and up-to-date, as most vendor solutions either implement RTPS as a tool to implement DDS or use past versions of the specification.
 
@@ -30,22 +40,69 @@ eProsima Fast RTPS has been adopted by multiple organizations in many sectors in
 * Robotics: ROS (Robotic Operating System) as their default middleware for ROS2.
 * EU R&D: FIWARE Incubated GE.
 
-The goal of this tutorial is to provide you with a simple _getting started_ guide on how to install and use Fast-RTPS. In the consequent tutorial we will discuss how Fast-RTPS (and therefore ROS2) can be connected to the Orion Context Broker using FIROS2.
+# What is Micro-RTPS?
 
-### Installation
+[eProsima](http://www.eprosima.com/) [Micro-RTPS](http://micro-rtps.readthedocs.io) protocols for RTPS (Real Time Publish Subscribe) as used in robotics and extremely constrained devices. is a software solution that provides publisher-subscriber communication between eXtremely Resource Constrained Environments (XRCEs) and a DDS network. In particular, Micro-RTPS implements a client-server protocol to enable resource-constrained devices (clients) to take part in DDS communications. Micro-RTPS agent (server) enables possible this communication by acting behalf of Micro-RTPS clients and enabling them to take part as DDS publishers and/or subscribers in the DDS Global Data Space.
+
+
+# Prerequisites
+
+## Docker
+
+To keep things simple both components will be run using [Docker](https://www.docker.com). **Docker** is a
+container technology which allows to different components isolated into their respective environments. 
+
+* To install Docker on Windows follow the instructions [here](https://docs.docker.com/docker-for-windows/)
+* To install Docker on Mac follow the instructions [here](https://docs.docker.com/docker-for-mac/)
+* To install Docker on Linux follow the instructions [here](https://docs.docker.com/install/)
+
+**Docker Compose** is a tool for defining and running multi-container Docker applications. A 
+[YAML file](https://raw.githubusercontent.com/Fiware/tutorials.Entity-Relationships/master/docker-compose.yml) is used
+configure the required services for the application. This means all container services can be brought up in a single 
+command. Docker Compose is installed by default  as part of Docker for Windows and  Docker for Mac, however Linux users 
+will need to follow the instructions found  [here](https://docs.docker.com/compose/install/)
+
+## Cygwin 
+
+We will start up our services using a simple bash script. Windows users should download [cygwin](http://www.cygwin.com/) to provide a
+command line functionality similar to a Linux distribution on Windows. 
+
+
+# Start Up
 
 To start the installation, do the following:
 
 ```console
-git clone https://github.com/flemic/tutorials.Fast-RTPS
-cd tutorials.Fast-RTPS/Fast-RTPS/
-./services fast
-```
+git clone git@github.com:Fiware/tutorials.Fast-RTPS-Micro-RTPS.git
 
-This will (after some time) build the Docker image to your host machine. How you can run it in a Docker container with:
+./services create
+``` 
+
+>**Note** The initial creation of Docker images can take up to fifteen minutes
+
+
+Thereafter, all services can be initialized from the command line by running the [services](https://github.com/Fiware/tutorials.Fast-RTPS-Micro-RTPS/blob/master/services) Bash script provided within the repository:
 
 ```console
-docker run -i -t --name fastrtps_container fastrtps:v1 bin/bash
+./services start
+``` 
+
+>:information_source: **Note:** If you want to clean up and start over again you can do so with the following command:
+>
+>```console
+>./services stop
+>``` 
+>
+
+
+# Introduction to Fast-RTPS
+
+The goal of this tutorial is to provide you with a simple _getting started_ guide on how to install and use Fast-RTPS. In the consequent tutorial we will discuss how Fast-RTPS (and therefore ROS2) can be connected to the Orion Context Broker using FIROS2.
+
+You can enter the running `examples-fast-rtps` Docker container with:
+
+```console
+docker exec -ti examples-fast-rtps bin/bash
 ```
 
 
@@ -53,7 +110,8 @@ docker run -i -t --name fastrtps_container fastrtps:v1 bin/bash
 
 At this point, you have Fast-RTPS installed in the Docker entrainer environment. We can now run a _HelloWorld_ example. In the example, we will send a set of messages from a publisher to a subscriber using Fast-RTPS protocol, as shown in the figure. 
 
-<img src="https://github.com/flemic/tutorials.Fast-RTPS/blob/master/Fast-RTPS/schema1.png" width="600" class="center">
+![](https://fiware.github.io/tutorials.Fast-RTPS-Micro-RTPS/img/fast-rtps-schema.png)
+
 
 First navigate to the _HelloWorld_ example folder:
 
@@ -121,26 +179,23 @@ Message HelloWorld 10 RECEIVED
 Subscriber unmatched
 ```
 
+To leave the container and end interactive mode, run the following:
+
+```console
+exit
+```
+ You will then return to the command line.
+
 Other examples are available in the _examples_ folder, which are beyond the scope of this tutorial. Other examples are available in the _examples_ folder, which are beyond the scope of this tutorial. For more information, please refer to the [official Fast-RTPS documentation](http://eprosima-fast-rtps.readthedocs.io/en/latest/).
 
-# Getting started with Micro-RTPS
-
-eProsima Micro-RTPS is a software solution that provides publisher-subscriber communication between eXtremely Resource Constrained Environments (XRCEs) and a DDS network. In particular, Micro-RTPS implements a client-server protocol to enable resource-constrained devices (clients) to take part in DDS communications. Micro-RTPS agent (server) enables possible this communication by acting behalf of Micro-RTPS clients and enabling them to take part as DDS publishers and/or subscribers in the DDS Global Data Space.
+# Introduction to Micro-RTPS
 
 The goal of this tutorial is to provide you with a simple _getting started_ guide on how to install and use Micro-RTPS. 
 
-### Installation
-
-To start the installation, do the following:
+You can enter the running `examples-micro-rtps` Docker container with:
 
 ```console
-./services micro
-```
-
-This will (after some time) build the Docker image to your host machine. How you can run it in a Docker container with:
-
-```console
-docker run -i -t --name micrortps_container micrortps:v1 bin/bash
+docker exec -ti examples-micro-rtps bin/bash
 ```
 
 
@@ -148,7 +203,7 @@ docker run -i -t --name micrortps_container micrortps:v1 bin/bash
 
 At this point, you have Micro-RTPS installed in the Docker entrainer environment. We can now run a _HelloWorld_ example. In the example, we will send a set of messages from a Micro-RTPS publisher to a Micro-RTPS subscriber through a Micro-RTPS agent, as shown in the figure. 
 
-<img src="https://github.com/flemic/tutorials.Fast-RTPS/blob/master/Micro-RTPS/schema2.png" width="600" class="center">
+![](https://fiware.github.io/tutorials.Fast-RTPS-Micro-RTPS/img/micro-rtps-schema.png)
 
 We first have to start the Micro-RTPS agent which will received messages sent by the Micro-RTPS publisher and forward them to the subscriber. In order to do that, execute the following commands, which will result in the Micro-RTPS agent being started on UDP port 2018:
 
@@ -206,4 +261,39 @@ Receive topic: Hello DDS world!, count: 8
 ...
 ```
 
+
+To leave the container and end interactive mode, run the following:
+
+```console
+exit
+```
+
+ You will then return to the command line.
+
+
+
 Other examples are available in the _examples_ folder, which are beyond the scope of this tutorial. For more information, please refer to the [official Micro-RTPS documentation](http://micro-rtps.readthedocs.io/en/latest/).
+
+
+
+
+
+# Next Steps
+
+Want to learn how to add more complexity to your application by adding advanced features?
+You can find out by reading the other tutorials in this series:
+
+&nbsp; 101. [Getting Started](https://github.com/Fiware/tutorials.Getting-Started)<br/>
+&nbsp; 102. [Entity Relationships](https://github.com/Fiware/tutorials.Entity-Relationships)<br/>
+&nbsp; 103. [CRUD Operations](https://github.com/Fiware/tutorials.CRUD-Operations)<br/>
+&nbsp; 104. [Context Providers](https://github.com/Fiware/tutorials.Context-Providers)<br/>
+&nbsp; 105. [Altering the Context Programmatically](https://github.com/Fiware/tutorials.Accessing-Context)<br/> 
+&nbsp; 106. [Subscribing to Changes in Context](https://github.com/Fiware/tutorials.Subscriptions)<br/>
+
+&nbsp; 201. [Introduction to IoT Sensors](https://github.com/Fiware/tutorials.IoT-Sensors)<br/>
+&nbsp; 202. [Provisioning an IoT Agent](https://github.com/Fiware/tutorials.IoT-Agent)<br/>
+&nbsp; 250. [Introduction to Fast-RTPS and Micro-RTPS ](https://github.com/Fiware/tutorials.Fast-RTPS-Micro-RTPS)<br/>
+
+
+&nbsp; 301. [Persisting Context Data](https://github.com/Fiware/tutorials.Historic-Context)<br/>
+&nbsp; 302. [Querying Time Series Data](https://github.com/Fiware/tutorials.Short-Term-History)<br/>

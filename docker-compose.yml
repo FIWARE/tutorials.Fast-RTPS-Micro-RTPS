@@ -1,0 +1,20 @@
+version: '3'
+services:
+  fast-rtps:
+    container_name: examples-fast-rtps
+    build: 
+      context: fast-RTPS
+      dockerfile: Dockerfile
+    image: fiware/fast-rtps-examples
+    command: tail -f /dev/null
+  
+  micro-rtps:
+    container_name: examples-micro-rtps
+    build: 
+      context: micro-RTPS
+      dockerfile: Dockerfile
+    image: fiware/micro-rtps-examples
+    command: tail -f /dev/null
+
+networks:
+  default:
