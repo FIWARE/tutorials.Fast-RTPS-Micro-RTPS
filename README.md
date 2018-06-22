@@ -5,6 +5,8 @@ The enablers of the FIWARE platform are not directly involved at this low level 
 
 The tutorial introduces a series of exercises which can be run directly from within a [Docker](https://www.docker.com) container, no HTTP calls are required.
 
+* このチュートリアルは[日本語](README.ja.md)でもご覧いただけます。
+
 # Contents
 
 - [What is Fast-RTPS?](#what-is-fast-rtps)
@@ -48,7 +50,7 @@ eProsima Fast RTPS has been adopted by multiple organizations in many sectors in
 
 # What is Micro-RTPS?
 
-[eProsima](http://www.eprosima.com/) [Micro-RTPS](http://micro-rtps.readthedocs.io) protocols for RTPS (Real Time Publish Subscribe) as used in robotics and extremely constrained devices. is a software solution that provides publisher-subscriber communication between eXtremely Resource Constrained Environments (XRCEs) and a DDS network. In particular, Micro-RTPS implements a client-server protocol to enable resource-constrained devices (clients) to take part in DDS communications. Micro-RTPS agent (server) enables possible this communication by acting behalf of Micro-RTPS clients and enabling them to take part as DDS publishers and/or subscribers in the DDS Global Data Space.
+[eProsima](http://www.eprosima.com/) [Micro-RTPS](http://micro-rtps.readthedocs.io) protocols for RTPS (Real Time Publish Subscribe) as used in robotics and extremely constrained devices, which is a software solution that provides publisher-subscriber communication between eXtremely Resource Constrained Environments (XRCEs) and a DDS network. In particular, Micro-RTPS implements a client-server protocol to enable resource-constrained devices (clients) to take part in DDS communications. Micro-RTPS agent (server) enables possible this communication by acting behalf of Micro-RTPS clients and enabling them to take part as DDS publishers and/or subscribers in the DDS Global Data Space.
 
 
 # Prerequisites
@@ -65,7 +67,7 @@ container technology which allows to different components isolated into their re
 **Docker Compose** is a tool for defining and running multi-container Docker applications. A 
 [YAML file](https://raw.githubusercontent.com/Fiware/tutorials.Entity-Relationships/master/docker-compose.yml) is used
 configure the required services for the application. This means all container services can be brought up in a single 
-command. Docker Compose is installed by default  as part of Docker for Windows and  Docker for Mac, however Linux users 
+command. Docker Compose is installed by default as part of Docker for Windows and  Docker for Mac, however Linux users 
 will need to follow the instructions found  [here](https://docs.docker.com/compose/install/)
 
 ## Cygwin 
@@ -110,7 +112,7 @@ Broker using FIROS2.
 
 ## Example usage
 
-At this point, you have Fast-RTPS installed in the Docker entrainer environment. We can now run a **Hello World** example. In the example, we will send a set of messages from a publisher to a subscriber using the Fast-RTPS protocol, as shown in the figure. 
+At this point, you have Fast-RTPS installed in the Docker container environment. We can now run a **Hello World** example. In the example, we will send a set of messages from a publisher to a subscriber using the Fast-RTPS protocol, as shown in the figure. 
 
 ![](https://fiware.github.io/tutorials.Fast-RTPS-Micro-RTPS/img/fast-rtps-schema.png)
 
