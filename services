@@ -28,6 +28,7 @@ case "${command}" in
         ;;
     "start")
 		stoppingContainers
+		echo -e "Starting two containers - \033[1;30mFast-RTPS\033[0m and \033[1;30mMicro-RTPS\033[0m."
 		docker-compose -f docker-compose.yml -p fiware up -d --remove-orphans
 		;;
 	"stop")

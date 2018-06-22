@@ -14,9 +14,15 @@ The tutorial introduces a series of exercises which can be run directly from wit
   * [Cygwin](#cygwin)
 - [Start Up](#start-up)
 - [Introduction to Fast-RTPS](#introduction-to-fast-rtps)
-    + [Example usage](#example-usage)
+  * [Example usage](#example-usage)
+    + [TERMINAL :one: - Make the examples](#terminal-one---make-the-examples)
+    + [TERMINAL :one: - Start the Fast-RTPS Subscriber](#terminal-one---start-the-fast-rtps-subscriber)
+    + [TERMINAL :two: - Start the Fast-RTPS Publisher](#terminal-two---start-the-fast-rtps-publisher)
 - [Introduction to Micro-RTPS](#introduction-to-micro-rtps)
-    + [Example usage](#example-usage-1)
+  * [Example usage](#example-usage-1)
+    + [TERMINAL :one: - Start the Micro-RTPS Agent](#terminal-one---start-the-micro-rtps-agent)
+    + [TERMINAL :two: - Start the Micro-RTPS Subscriber](#terminal-two---start-the-micro-rtps-subscriber)
+    + [TERMINAL :three: - Start the Micro-RTPS Publisher](#terminal-three---start-the-micro-rtps-publisher)
 - [Next Steps](#next-steps)
 
 
@@ -97,26 +103,24 @@ Thereafter, all services can be initialized from the command line by running the
 
 # Introduction to Fast-RTPS
 
-The goal of this tutorial is to provide you with a simple _getting started_ guide on how to install and use Fast-RTPS. In the consequent tutorial we will discuss how Fast-RTPS (and therefore ROS2) can be connected to the Orion Context Broker using FIROS2.
-
-You can enter the running `examples-fast-rtps` Docker container with:
-
-```console
-docker exec -ti examples-fast-rtps bin/bash
-```
+The goal of this section is to provide you with a simple getting started guide on how to install and use Fast-RTPS. 
+In the subsequent tutorials we will discuss how Fast-RTPS (and therefore ROS2) can be connected to the Orion Context
+Broker using FIROS2.
 
 
-### Example usage
+## Example usage
 
-At this point, you have Fast-RTPS installed in the Docker entrainer environment. We can now run a _HelloWorld_ example. In the example, we will send a set of messages from a publisher to a subscriber using Fast-RTPS protocol, as shown in the figure. 
+At this point, you have Fast-RTPS installed in the Docker entrainer environment. We can now run a **Hello World** example. In the example, we will send a set of messages from a publisher to a subscriber using the Fast-RTPS protocol, as shown in the figure. 
 
 ![](https://fiware.github.io/tutorials.Fast-RTPS-Micro-RTPS/img/fast-rtps-schema.png)
 
 
-First navigate to the _HelloWorld_ example folder:
+### TERMINAL :one: - Make the examples
+
+Open a new terminal and enter the running `examples-fast-rtps` Docker container with:
 
 ```console
-cd home/Fast-RTPS/examples/C++/HelloWorldExample/
+docker exec -ti examples-fast-rtps /bin/bash
 ```
 
 To compile the example, do the usual:
@@ -127,12 +131,7 @@ make
 make install
 ```
 
-Now we will need a second terminal in our Docker environment. In one of the terminals, we will start the publisher, while in the other we will start the subscriber. To open a second terminal, open a bash terminal and run the following:
-
-```console
-docker exec -i -t fastrtps_container /bin/bash
-cd home/Fast-RTPS/examples/C++/HelloWorldExample/
-``` 
+### TERMINAL :one: - Start the Fast-RTPS Subscriber
 
 First we start a subscriber:
 
@@ -140,13 +139,49 @@ First we start a subscriber:
 ./HelloWorldExample subscriber
 ```
 
-Then we start the publisher in the other terminal:
+#### Fast-RTPS Subscriber (TERMINAL :one:) - Result:
+
+```
+Starting 
+Subscriber running. Please press enter to stop the Subscriber
+```
+
+
+### TERMINAL :two: - Start the Fast-RTPS Publisher
+
+Open a **second new terminal** and enter the running `examples-fast-rtps` Docker container with:
+
+```console
+docker exec -ti examples-fast-rtps /bin/bash
+```
+
+Then we start the publisher in this second terminal:
 
 ```console
 ./HelloWorldExample publisher
 ```
 
 The messages should be automatically sent by the publisher and received by the subscriber. If everything is OK, in your publisher and subscriber terminals respectively you should see something like:
+
+
+#### Fast-RTPS Subscriber (TERMINAL :one:) - Result:
+
+```console
+Subscriber matched
+Message HelloWorld 1 RECEIVED
+Message HelloWorld 2 RECEIVED
+Message HelloWorld 3 RECEIVED
+Message HelloWorld 4 RECEIVED
+Message HelloWorld 5 RECEIVED
+Message HelloWorld 6 RECEIVED
+Message HelloWorld 7 RECEIVED
+Message HelloWorld 8 RECEIVED
+Message HelloWorld 9 RECEIVED
+Message HelloWorld 10 RECEIVED
+Subscriber unmatched
+```
+
+#### Fast-RTPS Publisher (TERMINAL :two:) Result:
 
 ```console
 Starting 
@@ -164,75 +199,118 @@ Message: HelloWorld with index: 10 SENT
 ```
 
 
-```console
-Subscriber matched
-Message HelloWorld 1 RECEIVED
-Message HelloWorld 2 RECEIVED
-Message HelloWorld 3 RECEIVED
-Message HelloWorld 4 RECEIVED
-Message HelloWorld 5 RECEIVED
-Message HelloWorld 6 RECEIVED
-Message HelloWorld 7 RECEIVED
-Message HelloWorld 8 RECEIVED
-Message HelloWorld 9 RECEIVED
-Message HelloWorld 10 RECEIVED
-Subscriber unmatched
-```
+You can stop the Fast-RTPS Subscriber in terminal :one: by pressing `<enter>`
 
-To leave the container and end interactive mode, run the following:
+To leave the containers and end interactive mode, run the following in each terminal.
 
 ```console
 exit
 ```
  You will then return to the command line.
 
-Other examples are available in the _examples_ folder, which are beyond the scope of this tutorial. Other examples are available in the _examples_ folder, which are beyond the scope of this tutorial. For more information, please refer to the [official Fast-RTPS documentation](http://eprosima-fast-rtps.readthedocs.io/en/latest/).
+Other examples are available in the `examples` folder, which are beyond the scope of this tutorial. For more information, please refer to the [official Fast-RTPS documentation](http://eprosima-fast-rtps.readthedocs.io/en/latest/).
 
 # Introduction to Micro-RTPS
 
-The goal of this tutorial is to provide you with a simple _getting started_ guide on how to install and use Micro-RTPS. 
-
-You can enter the running `examples-micro-rtps` Docker container with:
-
-```console
-docker exec -ti examples-micro-rtps bin/bash
-```
+The goal of this section is to provide you with a simple getting started guide on how to install and use Micro-RTPS. 
 
 
-### Example usage
+## Example usage
 
-At this point, you have Micro-RTPS installed in the Docker entrainer environment. We can now run a _HelloWorld_ example. In the example, we will send a set of messages from a Micro-RTPS publisher to a Micro-RTPS subscriber through a Micro-RTPS agent, as shown in the figure. 
+At this point, you have Micro-RTPS installed in the Docker container environment. We can now run a **Hello World** example. In the example, we will send a set of messages from a Micro-RTPS publisher to a Micro-RTPS subscriber through a Micro-RTPS agent, as shown in the figure. 
 
 ![](https://fiware.github.io/tutorials.Fast-RTPS-Micro-RTPS/img/micro-rtps-schema.png)
 
-We first have to start the Micro-RTPS agent which will received messages sent by the Micro-RTPS publisher and forward them to the subscriber. In order to do that, execute the following commands, which will result in the Micro-RTPS agent being started on UDP port 2018:
+
+### TERMINAL :one: - Start the Micro-RTPS Agent
+
+Open a new terminal and enter the running `examples-micro-rtps` Docker container with:
+
+```console
+docker exec -ti examples-micro-rtps /bin/bash
+```
+
+We first have to start the Micro-RTPS agent which will received messages sent by the Micro-RTPS publisher and forward them to the subscriber. In order to do that, execute the following commands, which will result in the Micro-RTPS agent being started on UDP port `2018`:
 
 ```console
 cd /usr/local/bin
 MicroRTPSAgent udp 2018
 ```
 
+#### Micro-RTPS Agent (TERMINAL :one:) Result:
+
+```
+UDP agent initialization... OK
+Running DDS-XRCE Agent...
+```
+
+
 Now we will need two more terminals in our Docker environment. In one of the terminals, we will start the Micro-RTPS publisher, while in the other we will start the subscriber. To open second and third terminals, open two bash terminals and in both of them run the following:
 
-```console
-docker exec -i -t micrortps_container /bin/bash
-``` 
+### TERMINAL :two: - Start the Micro-RTPS Subscriber
 
-First we start a subscriber:
+Open a **second new terminal** and enter the running `examples-micro-rtps` Docker container with:
+
+```console
+docker exec -ti examples-micro-rtps /bin/bash
+```
+
+We start a subscriber as shown:
 
 ```console
 cd /usr/local/examples/micrortps/SubscribeHelloWorldClient/bin/
-./PublishHelloWorldClient udp 127.0.0.1 2018
+./SubscribeHelloWorldClient udp 127.0.0.1 2018
 ```
 
-Then we start the publisher in the other terminal:
+#### Micro-RTPS Subscriber (TERMINAL :two:) Result:
+
+```
+<< UDP mode => ip: 127.0.0.1 - port: 2018 >>
+```
+
+### TERMINAL :three: - Start the Micro-RTPS Publisher
+
+Open a **third new terminal** and enter the running `examples-micro-rtps` Docker container with:
+
+```console
+docker exec -ti examples-micro-rtps /bin/bash
+```
+
+Then we start the publisher in the third terminal:
 
 ```console
 cd /usr/local/examples/micrortps/PublishHelloWorldClient/bin/
-/SubscribeHelloWorldClient udp 127.0.0.1 2018
+./PublishHelloWorldClient udp 127.0.0.1 2018
 ```
 
 The messages should be automatically sent by the publisher and received by the subscriber. If everything is OK, in your publisher and subscriber terminals respectively you should see something like:
+
+
+#### Micro-RTPS Agent (TERMINAL :one:) Result:
+
+```console
+UDP agent initialization... OK
+Running DDS-XRCE Agent...
+RTPS Publisher matched
+...
+```
+
+#### Micro-RTPS Subscriber (TERMINAL :two:) Result:
+
+```console
+<< UDP mode => ip: 127.0.0.1 - port: 2018 >>
+Receive topic: Hello DDS world!, count: 1
+Receive topic: Hello DDS world!, count: 2
+Receive topic: Hello DDS world!, count: 3
+Receive topic: Hello DDS world!, count: 4
+Receive topic: Hello DDS world!, count: 5
+Receive topic: Hello DDS world!, count: 6
+Receive topic: Hello DDS world!, count: 7
+Receive topic: Hello DDS world!, count: 8
+...
+```
+
+#### Micro-RTPS Publisher (TERMINAL :three:) Result:
 
 ```console
 << UDP mode => ip: 127.0.0.1 - port: 2018 >>
@@ -248,21 +326,9 @@ Send topic: Hello DDS world!, count: 8
 ```
 
 
-```console
-<< UDP mode => ip: 127.0.0.1 - port: 2018 >>
-Receive topic: Hello DDS world!, count: 1
-Receive topic: Hello DDS world!, count: 2
-Receive topic: Hello DDS world!, count: 3
-Receive topic: Hello DDS world!, count: 4
-Receive topic: Hello DDS world!, count: 5
-Receive topic: Hello DDS world!, count: 6
-Receive topic: Hello DDS world!, count: 7
-Receive topic: Hello DDS world!, count: 8
-...
-```
 
 
-To leave the container and end interactive mode, run the following:
+To leave the containers and end interactive mode, run the following:
 
 ```console
 exit
