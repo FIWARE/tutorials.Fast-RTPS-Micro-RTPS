@@ -141,7 +141,8 @@ First we start a subscriber:
 
 #### :one:st terminal - Result:
 
-The Fast-RTPS Subscriber has started and is awaiting messages
+The Fast-RTPS Subscriber has started and is awaiting messages:
+
 ```
 Starting 
 Subscriber running. Please press enter to stop the Subscriber
@@ -169,7 +170,7 @@ The messages should be automatically sent by the publisher and received by the s
 
 The Fast-RTPS Subscriber has received a series of messages:
 
-```console
+```
 Subscriber matched
 Message HelloWorld 1 RECEIVED
 Message HelloWorld 2 RECEIVED
