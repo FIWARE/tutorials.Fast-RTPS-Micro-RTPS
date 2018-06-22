@@ -15,14 +15,14 @@ The tutorial introduces a series of exercises which can be run directly from wit
 - [Start Up](#start-up)
 - [Introduction to Fast-RTPS](#introduction-to-fast-rtps)
   * [Example usage](#example-usage)
-    + [Make the examples (TERMINAL :one:)](#make-the-examples-terminal-one)
-    + [Start the Fast-RTPS Subscriber (TERMINAL :one:)](#start-the-fast-rtps-subscriber-terminal-one)
-    + [Start the Fast-RTPS Publisher (TERMINAL :two:)](#start-the-fast-rtps-publisher-terminal-two)
+    + [Make the examples (:one:st Terminal)](#make-the-examples-onest-terminal)
+    + [Start the Fast-RTPS Subscriber (:one:st Terminal)](#start-the-fast-rtps-subscriber-onest-terminal)
+    + [Start the Fast-RTPS Publisher (:two:nd Terminal)](#start-the-fast-rtps-publisher-twond-terminal)
 - [Introduction to Micro-RTPS](#introduction-to-micro-rtps)
   * [Example usage](#example-usage-1)
-    + [Start the Micro-RTPS Agent (TERMINAL :one:)](#start-the-micro-rtps-agent-terminal-one)
-    + [Start the Micro-RTPS Subscriber (TERMINAL :two:)](#start-the-micro-rtps-subscriber-terminal-two)
-    + [Start the Micro-RTPS Publisher (TERMINAL :three:)](#start-the-micro-rtps-publisher-terminal-three)
+    + [Start the Micro-RTPS Agent (:one:st Terminal)](#start-the-micro-rtps-agent-onest-terminal)
+    + [Start the Micro-RTPS Subscriber (:two:nd Terminal)](#start-the-micro-rtps-subscriber-twond-terminal)
+    + [Start the Micro-RTPS Publisher (:three:rd Terminal)](#start-the-micro-rtps-publisher-threerd-terminal)
 - [Next Steps](#next-steps)
 
 
@@ -115,7 +115,7 @@ At this point, you have Fast-RTPS installed in the Docker entrainer environment.
 ![](https://fiware.github.io/tutorials.Fast-RTPS-Micro-RTPS/img/fast-rtps-schema.png)
 
 
-### Make the examples (TERMINAL :one:)
+### Make the examples (:one:st Terminal)
 
 Open a new terminal and enter the running `examples-fast-rtps` Docker container with:
 
@@ -131,7 +131,7 @@ make
 make install
 ```
 
-### Start the Fast-RTPS Subscriber (TERMINAL :one:)
+### Start the Fast-RTPS Subscriber (:one:st Terminal)
 
 First we start a subscriber:
 
@@ -139,15 +139,16 @@ First we start a subscriber:
 ./HelloWorldExample subscriber
 ```
 
-#### Fast-RTPS Subscriber (TERMINAL :one:) - Result:
+#### :one:st terminal - Result:
 
+The Fast-RTPS Subscriber has started and is awaiting messages
 ```
 Starting 
 Subscriber running. Please press enter to stop the Subscriber
 ```
 
 
-### Start the Fast-RTPS Publisher (TERMINAL :two:)
+### Start the Fast-RTPS Publisher (:two:nd Terminal)
 
 Open a **second new terminal** and enter the running `examples-fast-rtps` Docker container with:
 
@@ -164,7 +165,9 @@ Then we start the publisher in this second terminal:
 The messages should be automatically sent by the publisher and received by the subscriber. If everything is OK, in your publisher and subscriber terminals respectively you should see something like:
 
 
-#### Fast-RTPS Subscriber (TERMINAL :one:) - Result:
+#### :one:st terminal - Result:
+
+The Fast-RTPS Subscriber has received a series of messages:
 
 ```console
 Subscriber matched
@@ -181,9 +184,11 @@ Message HelloWorld 10 RECEIVED
 Subscriber unmatched
 ```
 
-#### Fast-RTPS Publisher (TERMINAL :two:) Result:
+#### :two:nd terminal - Result:
 
-```console
+The Fast-RTPS Publisher sends a series of messages:
+
+```
 Starting 
 Publisher matched
 Message: HelloWorld with index: 1 SENT
@@ -199,7 +204,7 @@ Message: HelloWorld with index: 10 SENT
 ```
 
 
-You can stop the Fast-RTPS Subscriber in terminal :one: by pressing `<enter>`
+You can stop the Fast-RTPS Subscriber in the :one:st terminal by pressing `<enter>`
 
 To leave the containers and end interactive mode, run the following in each terminal.
 
@@ -222,7 +227,7 @@ At this point, you have Micro-RTPS installed in the Docker container environment
 ![](https://fiware.github.io/tutorials.Fast-RTPS-Micro-RTPS/img/micro-rtps-schema.png)
 
 
-### Start the Micro-RTPS Agent (TERMINAL :one:)
+### Start the Micro-RTPS Agent (:one:st Terminal)
 
 Open a new terminal and enter the running `examples-micro-rtps` Docker container with:
 
@@ -237,7 +242,9 @@ cd /usr/local/bin
 MicroRTPSAgent udp 2018
 ```
 
-#### Micro-RTPS Agent (TERMINAL :one:) Result:
+#### :one:st terminal - Result:
+
+The Micro-RTPS Agent is up and running
 
 ```
 UDP agent initialization... OK
@@ -247,7 +254,7 @@ Running DDS-XRCE Agent...
 
 Now we will need two more terminals in our Docker environment. In one of the terminals, we will start the Micro-RTPS publisher, while in the other we will start the subscriber. To open second and third terminals, open two bash terminals and in both of them run the following:
 
-### Start the Micro-RTPS Subscriber (TERMINAL :two:)
+### Start the Micro-RTPS Subscriber (:two:nd Terminal)
 
 Open a **second new terminal** and enter the running `examples-micro-rtps` Docker container with:
 
@@ -262,13 +269,15 @@ cd /usr/local/examples/micrortps/SubscribeHelloWorldClient/bin/
 ./SubscribeHelloWorldClient udp 127.0.0.1 2018
 ```
 
-#### Micro-RTPS Subscriber (TERMINAL :two:) Result:
+#### :two:nd terminal - Result:
+
+The Micro-RTPS Subscriber is running and awaiting messages
 
 ```
 << UDP mode => ip: 127.0.0.1 - port: 2018 >>
 ```
 
-### Start the Micro-RTPS Publisher (TERMINAL :three:)
+### Start the Micro-RTPS Publisher (:three:rd Terminal)
 
 Open a **third new terminal** and enter the running `examples-micro-rtps` Docker container with:
 
@@ -286,18 +295,22 @@ cd /usr/local/examples/micrortps/PublishHelloWorldClient/bin/
 The messages should be automatically sent by the publisher and received by the subscriber. If everything is OK, in your publisher and subscriber terminals respectively you should see something like:
 
 
-#### Micro-RTPS Agent (TERMINAL :one:) Result:
+#### :one:st terminal - Result:
 
-```console
+The Micro-RTPS Agent has started receiving messages from the Publisher
+
+```
 UDP agent initialization... OK
 Running DDS-XRCE Agent...
 RTPS Publisher matched
 ...
 ```
 
-#### Micro-RTPS Subscriber (TERMINAL :two:) Result:
+#### :two:nd terminal - Result:
 
-```console
+The Micro-RTPS Subscriber has received the messages passed on by the Micro-RTPS Agent 
+
+```
 << UDP mode => ip: 127.0.0.1 - port: 2018 >>
 Receive topic: Hello DDS world!, count: 1
 Receive topic: Hello DDS world!, count: 2
@@ -310,9 +323,11 @@ Receive topic: Hello DDS world!, count: 8
 ...
 ```
 
-#### Micro-RTPS Publisher (TERMINAL :three:) Result:
+#### :three:rd terminal - Result:
 
-```console
+The Micro-RTPS Publisher has sent a series of messages as shown:
+
+```
 << UDP mode => ip: 127.0.0.1 - port: 2018 >>
 Send topic: Hello DDS world!, count: 1
 Send topic: Hello DDS world!, count: 2
