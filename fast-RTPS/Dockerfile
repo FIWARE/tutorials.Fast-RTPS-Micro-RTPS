@@ -55,3 +55,5 @@ RUN mkdir /home/Fast-RTPS/build && \
 	cmake -DTHIRDPARTY=ON -DBUILD_JAVA=ON .. && \
 	make  && \
 	make install
+
+WORKDIR /home/Fast-RTPS/examples/C++/HelloWorldExample/
