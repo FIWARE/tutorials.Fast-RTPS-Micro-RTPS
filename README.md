@@ -15,14 +15,14 @@ The tutorial introduces a series of exercises which can be run directly from wit
 - [Start Up](#start-up)
 - [Introduction to Fast-RTPS](#introduction-to-fast-rtps)
   * [Example usage](#example-usage)
-    + [TERMINAL :one: - Make the examples](#terminal-one---make-the-examples)
-    + [TERMINAL :one: - Start the Fast-RTPS Subscriber](#terminal-one---start-the-fast-rtps-subscriber)
-    + [TERMINAL :two: - Start the Fast-RTPS Publisher](#terminal-two---start-the-fast-rtps-publisher)
+    + [Make the examples (TERMINAL :one:)](#make-the-examples-terminal-one)
+    + [Start the Fast-RTPS Subscriber (TERMINAL :one:)](#start-the-fast-rtps-subscriber-terminal-one)
+    + [Start the Fast-RTPS Publisher (TERMINAL :two:)](#start-the-fast-rtps-publisher-terminal-two)
 - [Introduction to Micro-RTPS](#introduction-to-micro-rtps)
   * [Example usage](#example-usage-1)
-    + [TERMINAL :one: - Start the Micro-RTPS Agent](#terminal-one---start-the-micro-rtps-agent)
-    + [TERMINAL :two: - Start the Micro-RTPS Subscriber](#terminal-two---start-the-micro-rtps-subscriber)
-    + [TERMINAL :three: - Start the Micro-RTPS Publisher](#terminal-three---start-the-micro-rtps-publisher)
+    + [Start the Micro-RTPS Agent (TERMINAL :one:)](#start-the-micro-rtps-agent-terminal-one)
+    + [Start the Micro-RTPS Subscriber (TERMINAL :two:)](#start-the-micro-rtps-subscriber-terminal-two)
+    + [Start the Micro-RTPS Publisher (TERMINAL :three:)](#start-the-micro-rtps-publisher-terminal-three)
 - [Next Steps](#next-steps)
 
 
@@ -115,7 +115,7 @@ At this point, you have Fast-RTPS installed in the Docker entrainer environment.
 ![](https://fiware.github.io/tutorials.Fast-RTPS-Micro-RTPS/img/fast-rtps-schema.png)
 
 
-### TERMINAL :one: - Make the examples
+### Make the examples (TERMINAL :one:)
 
 Open a new terminal and enter the running `examples-fast-rtps` Docker container with:
 
@@ -131,7 +131,7 @@ make
 make install
 ```
 
-### TERMINAL :one: - Start the Fast-RTPS Subscriber
+### Start the Fast-RTPS Subscriber (TERMINAL :one:)
 
 First we start a subscriber:
 
@@ -147,7 +147,7 @@ Subscriber running. Please press enter to stop the Subscriber
 ```
 
 
-### TERMINAL :two: - Start the Fast-RTPS Publisher
+### Start the Fast-RTPS Publisher (TERMINAL :two:)
 
 Open a **second new terminal** and enter the running `examples-fast-rtps` Docker container with:
 
@@ -222,7 +222,7 @@ At this point, you have Micro-RTPS installed in the Docker container environment
 ![](https://fiware.github.io/tutorials.Fast-RTPS-Micro-RTPS/img/micro-rtps-schema.png)
 
 
-### TERMINAL :one: - Start the Micro-RTPS Agent
+### Start the Micro-RTPS Agent (TERMINAL :one:)
 
 Open a new terminal and enter the running `examples-micro-rtps` Docker container with:
 
@@ -247,7 +247,7 @@ Running DDS-XRCE Agent...
 
 Now we will need two more terminals in our Docker environment. In one of the terminals, we will start the Micro-RTPS publisher, while in the other we will start the subscriber. To open second and third terminals, open two bash terminals and in both of them run the following:
 
-### TERMINAL :two: - Start the Micro-RTPS Subscriber
+### Start the Micro-RTPS Subscriber (TERMINAL :two:)
 
 Open a **second new terminal** and enter the running `examples-micro-rtps` Docker container with:
 
@@ -268,7 +268,7 @@ cd /usr/local/examples/micrortps/SubscribeHelloWorldClient/bin/
 << UDP mode => ip: 127.0.0.1 - port: 2018 >>
 ```
 
-### TERMINAL :three: - Start the Micro-RTPS Publisher
+### Start the Micro-RTPS Publisher (TERMINAL :three:)
 
 Open a **third new terminal** and enter the running `examples-micro-rtps` Docker container with:
 
