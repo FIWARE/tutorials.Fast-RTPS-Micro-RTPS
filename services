@@ -37,4 +37,9 @@ case "${command}" in
 		echo "Recreate Micro-RTPS examples"
 		docker build -t fiware/micro-rtps-examples ./micro-rtps
 		;;
+	*)
+		echo "Command not Found."
+		echo "usage: services [create|start|stop]"
+		exit 127;
+		;;
 esac
