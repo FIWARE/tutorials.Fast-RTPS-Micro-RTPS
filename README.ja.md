@@ -1,5 +1,10 @@
 [![FIWARE Banner](https://fiware.github.io/tutorials.Fast-RTPS-Micro-RTPS/img/fiware.png)](https://www.fiware.org/developers)
 
+[![FIWARE Robots](https://img.shields.io/badge/FIWARE-Robots-5dc0cf.svg)](https://www.fiware.org/developers/catalogue/)
+[![Documentation](https://readthedocs.org/projects/fiware-tutorials/badge/?version=latest)](https://fiware-tutorials.readthedocs.io/en/latest)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+
 これは、ロボット技術や極端に制約のあるデバイスで使用される RTPS (Real Time Publish Subscribe) の [Fast-RTPS](https://eprosima-fast-rtps.readthedocs.io) および [Micro-RTPS](http://micro-rtps.readthedocs.io) の入門チュートリアルです。FIWARE プラットフォームのイネーブラは、この低レベルの通信には直接関与していませんが、ロボッ・デバイスを FIWARE システムに接続する前に、プロトコルの完全な理解が必要です。
 
 このチュートリアルでは、[Docker](https://www.docker.com) コンテナから直接実行できる一連の演習を紹介していますが、HTTP コールは必要ありません。
@@ -351,18 +356,4 @@ exit
 
 高度な機能を追加することで、アプリケーションに複雑さを加える方法を知りたいですか？このシリーズの他のチュートリアルを読むことで見つけることができます :
 
-&nbsp; 101. [Getting Started](https://github.com/Fiware/tutorials.Getting-Started)<br/>
-&nbsp; 102. [Entity Relationships](https://github.com/Fiware/tutorials.Entity-Relationships)<br/>
-&nbsp; 103. [CRUD Operations](https://github.com/Fiware/tutorials.CRUD-Operations)<br/>
-&nbsp; 104. [Context Providers](https://github.com/Fiware/tutorials.Context-Providers)<br/>
-&nbsp; 105. [Altering the Context Programmatically](https://github.com/Fiware/tutorials.Accessing-Context)<br/> 
-&nbsp; 106. [Subscribing to Changes in Context](https://github.com/Fiware/tutorials.Subscriptions)<br/>
 
-&nbsp; 201. [Introduction to IoT Sensors](https://github.com/Fiware/tutorials.IoT-Sensors)<br/>
-&nbsp; 202. [Provisioning an IoT Agent](https://github.com/Fiware/tutorials.IoT-Agent)<br/>
-&nbsp; 203. [IoT over MQTT](https://github.com/Fiware/tutorials.IoT-over-MQTT)<br/>
-&nbsp; 250. [Introduction to Fast-RTPS and Micro-RTPS ](https://github.com/Fiware/tutorials.Fast-RTPS-Micro-RTPS)<br/>
-
-&nbsp; 301. [Persisting Context Data (Mongo-DB, MySQL, PostgreSQL)](https://github.com/Fiware/tutorials.Historic-Context)<br/>
-&nbsp; 302. [Querying Time Series Data (Mongo-DB)](https://github.com/Fiware/tutorials.Short-Term-History)<br/>
-&nbsp; 303. [Querying Time Series Data (Crate-DB)](https://github.com/Fiware/tutorials.Time-Series-Data)<br/>

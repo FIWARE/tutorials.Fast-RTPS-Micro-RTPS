@@ -1,5 +1,10 @@
 [![FIWARE Banner](https://fiware.github.io/tutorials.Fast-RTPS-Micro-RTPS/img/fiware.png)](https://www.fiware.org/developers)
 
+[![FIWARE Robots](https://img.shields.io/badge/FIWARE-Robots-5dc0cf.svg)](https://www.fiware.org/developers/catalogue/)
+[![Documentation](https://readthedocs.org/projects/fiware-tutorials/badge/?version=latest)](https://fiware-tutorials.readthedocs.io/en/latest)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+
 This is an Introductory Tutorial to the [Fast-RTPS](https://eprosima-fast-rtps.readthedocs.io) and [Micro-RTPS](http://micro-rtps.readthedocs.io) protocols for RTPS (Real Time Publish Subscribe) as used in robotics and extremely constrained devices.
 The enablers of the FIWARE platform are not directly involved at this low level of communication but a complete understanding of the protocols is required before proceeding to connect robotic devices to the FIWARE System.
 
@@ -365,20 +370,6 @@ Other examples are available in the _examples_ folder, which are beyond the scop
 # Next Steps
 
 Want to learn how to add more complexity to your application by adding advanced features?
-You can find out by reading the other tutorials in this series:
+You can find out by reading the other [tutorials in this series](https://fiware-tutorials.readthedocs.io/en/latest)
 
-&nbsp; 101. [Getting Started](https://github.com/Fiware/tutorials.Getting-Started)<br/>
-&nbsp; 102. [Entity Relationships](https://github.com/Fiware/tutorials.Entity-Relationships)<br/>
-&nbsp; 103. [CRUD Operations](https://github.com/Fiware/tutorials.CRUD-Operations)<br/>
-&nbsp; 104. [Context Providers](https://github.com/Fiware/tutorials.Context-Providers)<br/>
-&nbsp; 105. [Altering the Context Programmatically](https://github.com/Fiware/tutorials.Accessing-Context)<br/> 
-&nbsp; 106. [Subscribing to Changes in Context](https://github.com/Fiware/tutorials.Subscriptions)<br/>
 
-&nbsp; 201. [Introduction to IoT Sensors](https://github.com/Fiware/tutorials.IoT-Sensors)<br/>
-&nbsp; 202. [Provisioning an IoT Agent](https://github.com/Fiware/tutorials.IoT-Agent)<br/>
-&nbsp; 203. [IoT over MQTT](https://github.com/Fiware/tutorials.IoT-over-MQTT)<br/>
-&nbsp; 250. [Introduction to Fast-RTPS and Micro-RTPS ](https://github.com/Fiware/tutorials.Fast-RTPS-Micro-RTPS)<br/>
-
-&nbsp; 301. [Persisting Context Data (Mongo-DB, MySQL, PostgreSQL)](https://github.com/Fiware/tutorials.Historic-Context)<br/>
-&nbsp; 302. [Querying Time Series Data (Mongo-DB)](https://github.com/Fiware/tutorials.Short-Term-History)<br/>
-&nbsp; 303. [Querying Time Series Data (Crate-DB)](https://github.com/Fiware/tutorials.Time-Series-Data)<br/>
