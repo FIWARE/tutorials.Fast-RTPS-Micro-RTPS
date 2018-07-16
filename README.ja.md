@@ -3,6 +3,7 @@
 [![FIWARE Robots](https://img.shields.io/badge/FIWARE-Robots-5dc0cf.svg)](https://www.fiware.org/developers/catalogue/)
 [![Documentation](https://readthedocs.org/projects/fiware-tutorials/badge/?version=latest)](https://fiware-tutorials.readthedocs.io/en/latest)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Fast_RTPS 1.6](https://img.shields.io/badge/Fast_RTPS-1.6-5dc0cf.svg)](http://eprosima-fast-rtps.readthedocs.io/)
 
 
 これは、ロボット技術や極端に制約のあるデバイスで使用される RTPS (Real Time Publish Subscribe) の [Fast-RTPS](https://eprosima-fast-rtps.readthedocs.io) および [Micro-RTPS](http://micro-rtps.readthedocs.io) の入門チュートリアルです。FIWARE プラットフォームのイネーブラは、この低レベルの通信には直接関与していませんが、ロボッ・デバイスを FIWARE システムに接続する前に、プロトコルの完全な理解が必要です。
@@ -68,7 +69,7 @@ RTPS (Real Time Publish Subscribe) 用の [eProsima](http://www.eprosima.com/) [
 **Docker Compose** は、マルチコンテナ Docker アプリケーションを定義して実行するためのツールです。[YAML file](https://raw.githubusercontent.com/Fiware/tutorials.Getting-Started/master/docker-compose.yml) ファイルは、アプリケーションのために必要なサービスを構成するために使用します。つまり、すべてのコンテナ・サービスは1つのコマンドで呼び出すことができます。Docker Compose は、デフォルトで Docker for Windows とDocker for Mac の一部としてインストールされますが、Linux ユーザは[ここ](https://docs.docker.com/compose/install/)に記載されている手順に従う必要があります。
 
 <a name="cygwin"></a>
-## Cygwin 
+## Cygwin
 
 シンプルな bash スクリプトを使用してサービスを開始します。Windows ユーザは [cygwin](http://www.cygwin.com/) をダウンロードして、Windows 上の Linux ディストリビューションと同様のコマンドライン機能を提供する必要があります。
 
@@ -81,7 +82,7 @@ RTPS (Real Time Publish Subscribe) 用の [eProsima](http://www.eprosima.com/) [
 git clone git@github.com:Fiware/tutorials.Fast-RTPS-Micro-RTPS.git
 
 ./services create
-``` 
+```
 
 >**注** Docker イメージの最初の作成には最大15分かかります
 
@@ -90,13 +91,13 @@ git clone git@github.com:Fiware/tutorials.Fast-RTPS-Micro-RTPS.git
 
 ```console
 ./services start
-``` 
+```
 
 >:information_source: **注 :** クリーンアップをやり直したい場合は、次のコマンドを使用して再起動することができます :
 >
 >```console
 >./services stop
->``` 
+>```
 >
 
 <a name="introduction-to-fast-rtps"></a>
@@ -124,8 +125,8 @@ docker exec -ti examples-fast-rtps /bin/bash
 この例をコンパイルするには、以下のようにします :
 
 ```console
-cmake . 
-make 
+cmake .
+make
 make install
 ```
 
@@ -143,7 +144,7 @@ make install
 Fast-RTPS サブスクライバが起動し、メッセージを待っています :
 
 ```
-Starting 
+Starting
 Subscriber running. Please press enter to stop the Subscriber
 ```
 
@@ -189,7 +190,7 @@ Subscriber unmatched
 Fast-RTPS パブリッシャは一連のメッセージを送信します :
 
 ```
-Starting 
+Starting
 Publisher matched
 Message: HelloWorld with index: 1 SENT
 Message: HelloWorld with index: 2 SENT

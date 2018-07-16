@@ -3,6 +3,7 @@
 [![FIWARE Robots](https://img.shields.io/badge/FIWARE-Robots-5dc0cf.svg)](https://www.fiware.org/developers/catalogue/)
 [![Documentation](https://readthedocs.org/projects/fiware-tutorials/badge/?version=latest)](https://fiware-tutorials.readthedocs.io/en/latest)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Fast_RTPS 1.6](https://img.shields.io/badge/Fast_RTPS-1.6-5dc0cf.svg)](http://eprosima-fast-rtps.readthedocs.io/)
 
 
 This is an Introductory Tutorial to the [Fast-RTPS](https://eprosima-fast-rtps.readthedocs.io) and [Micro-RTPS](http://micro-rtps.readthedocs.io) protocols for RTPS (Real Time Publish Subscribe) as used in robotics and extremely constrained devices.
@@ -36,7 +37,7 @@ The tutorial introduces a series of exercises which can be run directly from wit
 
 # What is Fast-RTPS?
 
-[eProsima](http://www.eprosima.com/) [Fast-RTPS](https://eprosima-fast-rtps.readthedocs.io) is a C++ implementation of the RTPS (Real Time Publish Subscribe) protocol, which provides publisher-subscriber communications over unreliable transports such as UDP, 
+[eProsima](http://www.eprosima.com/) [Fast-RTPS](https://eprosima-fast-rtps.readthedocs.io) is a C++ implementation of the RTPS (Real Time Publish Subscribe) protocol, which provides publisher-subscriber communications over unreliable transports such as UDP,
 as defined and maintained by the Object Management Group (OMG) consortium. RTPS is also the wire interoperability protocol defined for the Data Distribution
 Service (DDS) standard, again by the OMG. eProsima Fast RTPS holds the benefit of being standalone and up-to-date, as most vendor solutions either implement RTPS as a tool to implement DDS or use past versions of the specification.
 
@@ -63,22 +64,22 @@ eProsima Fast RTPS has been adopted by multiple organizations in many sectors in
 ## Docker
 
 To keep things simple both components will be run using [Docker](https://www.docker.com). **Docker** is a
-container technology which allows to different components isolated into their respective environments. 
+container technology which allows to different components isolated into their respective environments.
 
 * To install Docker on Windows follow the instructions [here](https://docs.docker.com/docker-for-windows/)
 * To install Docker on Mac follow the instructions [here](https://docs.docker.com/docker-for-mac/)
 * To install Docker on Linux follow the instructions [here](https://docs.docker.com/install/)
 
-**Docker Compose** is a tool for defining and running multi-container Docker applications. A 
+**Docker Compose** is a tool for defining and running multi-container Docker applications. A
 [YAML file](https://raw.githubusercontent.com/Fiware/tutorials.Entity-Relationships/master/docker-compose.yml) is used
-configure the required services for the application. This means all container services can be brought up in a single 
-command. Docker Compose is installed by default as part of Docker for Windows and  Docker for Mac, however Linux users 
+configure the required services for the application. This means all container services can be brought up in a single
+command. Docker Compose is installed by default as part of Docker for Windows and  Docker for Mac, however Linux users
 will need to follow the instructions found  [here](https://docs.docker.com/compose/install/)
 
-## Cygwin 
+## Cygwin
 
 We will start up our services using a simple bash script. Windows users should download [cygwin](http://www.cygwin.com/) to provide a
-command line functionality similar to a Linux distribution on Windows. 
+command line functionality similar to a Linux distribution on Windows.
 
 
 # Start Up
@@ -89,7 +90,7 @@ To start the installation, do the following:
 git clone git@github.com:Fiware/tutorials.Fast-RTPS-Micro-RTPS.git
 
 ./services create
-``` 
+```
 
 >**Note** The initial creation of Docker images can take up to fifteen minutes
 
@@ -98,26 +99,26 @@ Thereafter, all services can be initialized from the command line by running the
 
 ```console
 ./services start
-``` 
+```
 
 >:information_source: **Note:** If you want to clean up and start over again you can do so with the following command:
 >
 >```console
 >./services stop
->``` 
+>```
 >
 
 
 # Introduction to Fast-RTPS
 
-The goal of this section is to provide you with a simple getting started guide on how to install and use Fast-RTPS. 
+The goal of this section is to provide you with a simple getting started guide on how to install and use Fast-RTPS.
 In the subsequent tutorials we will discuss how Fast-RTPS (and therefore ROS2) can be connected to the Orion Context
 Broker using FIROS2.
 
 
 ## Example usage
 
-At this point, you have Fast-RTPS installed in the Docker container environment. We can now run a **Hello World** example. In the example, we will send a set of messages from a publisher to a subscriber using the Fast-RTPS protocol, as shown in the figure. 
+At this point, you have Fast-RTPS installed in the Docker container environment. We can now run a **Hello World** example. In the example, we will send a set of messages from a publisher to a subscriber using the Fast-RTPS protocol, as shown in the figure.
 
 ![](https://fiware.github.io/tutorials.Fast-RTPS-Micro-RTPS/img/fast-rtps-schema.png)
 
@@ -133,8 +134,8 @@ docker exec -ti examples-fast-rtps /bin/bash
 To compile the example, do the usual:
 
 ```console
-cmake . 
-make 
+cmake .
+make
 make install
 ```
 
@@ -151,7 +152,7 @@ First we start a subscriber:
 The Fast-RTPS Subscriber has started and is awaiting messages:
 
 ```
-Starting 
+Starting
 Subscriber running. Please press enter to stop the Subscriber
 ```
 
@@ -197,7 +198,7 @@ Subscriber unmatched
 The Fast-RTPS Publisher sends a series of messages:
 
 ```
-Starting 
+Starting
 Publisher matched
 Message: HelloWorld with index: 1 SENT
 Message: HelloWorld with index: 2 SENT
@@ -225,12 +226,12 @@ Other examples are available in the `examples` folder, which are beyond the scop
 
 # Introduction to Micro-RTPS
 
-The goal of this section is to provide you with a simple getting started guide on how to install and use Micro-RTPS. 
+The goal of this section is to provide you with a simple getting started guide on how to install and use Micro-RTPS.
 
 
 ## Example usage
 
-At this point, you have Micro-RTPS installed in the Docker container environment. We can now run a **Hello World** example. In the example, we will send a set of messages from a Micro-RTPS publisher to a Micro-RTPS subscriber through a Micro-RTPS agent, as shown in the figure. 
+At this point, you have Micro-RTPS installed in the Docker container environment. We can now run a **Hello World** example. In the example, we will send a set of messages from a Micro-RTPS publisher to a Micro-RTPS subscriber through a Micro-RTPS agent, as shown in the figure.
 
 ![](https://fiware.github.io/tutorials.Fast-RTPS-Micro-RTPS/img/micro-rtps-schema.png)
 
@@ -316,7 +317,7 @@ RTPS Publisher matched
 
 #### :two:nd terminal - Result:
 
-The Micro-RTPS Subscriber has received the messages passed on by the Micro-RTPS Agent 
+The Micro-RTPS Subscriber has received the messages passed on by the Micro-RTPS Agent
 
 ```
 << UDP mode => ip: 127.0.0.1 - port: 2018 >>
