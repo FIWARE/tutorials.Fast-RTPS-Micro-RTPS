@@ -10,7 +10,7 @@
 
 このチュートリアルでは、[Docker](https://www.docker.com) コンテナから直接実行できる一連の演習を紹介していますが、HTTP コールは必要ありません。
 
-# Contents
+# 内容
 
 - [Fast-RTPSとは？](#what-is-fast-rtps)
 - [Micro-RTPSとは？](#what-is-micro-rtps)
@@ -66,7 +66,7 @@ RTPS (Real Time Publish Subscribe) 用の [eProsima](http://www.eprosima.com/) [
 * Docker Mac にインストールするには、[こちら](https://docs.docker.com/docker-for-mac/)の手順に従ってください
 * Docker Linux にインストールするには、[こちら](https://docs.docker.com/install/)の手順に従ってください
 
-**Docker Compose** は、マルチコンテナ Docker アプリケーションを定義して実行するためのツールです。[YAML file](https://raw.githubusercontent.com/Fiware/tutorials.Getting-Started/master/docker-compose.yml) ファイルは、アプリケーションのために必要なサービスを構成するために使用します。つまり、すべてのコンテナ・サービスは1つのコマンドで呼び出すことができます。Docker Compose は、デフォルトで Docker for Windows とDocker for Mac の一部としてインストールされますが、Linux ユーザは[ここ](https://docs.docker.com/compose/install/)に記載されている手順に従う必要があります。
+**Docker Compose** は、マルチコンテナ Docker アプリケーションを定義して実行するためのツールです。[YAML file](https://raw.githubusercontent.com/Fiware/tutorials.Fast-RTPS-Micro-RTPS/master/docker-compose.yml) ファイルは、アプリケーションのために必要なサービスを構成するために使用します。つまり、すべてのコンテナ・サービスは1つのコマンドで呼び出すことができます。Docker Compose は、デフォルトで Docker for Windows とDocker for Mac の一部としてインストールされますが、Linux ユーザは[ここ](https://docs.docker.com/compose/install/)に記載されている手順に従う必要があります。
 
 次のコマンドを使用して、現在の **Docker** バージョンと **Docker Compose** バージョンを確認できます :
 
