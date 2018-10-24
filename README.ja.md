@@ -2,8 +2,10 @@
 
 [![FIWARE Robots](https://nexus.lab.fiware.org/repository/raw/public/badges/chapters/robotics.svg)](https://www.fiware.org/developers/catalogue/)
 [![License: MIT](https://img.shields.io/github/license/fiware/tutorials.Fast-RTPS-Micro-RTPS.svg)](https://opensource.org/licenses/MIT)
-[![Documentation](https://img.shields.io/readthedocs/fiware-tutorials.svg)](https://fiware-tutorials.rtfd.io)
 [![Fast_RTPS 1.6](https://img.shields.io/badge/Fast_RTPS-1.6-5dc0cf.svg)](http://eprosima-fast-rtps.readthedocs.io/)
+[![Support badge](https://nexus.lab.fiware.org/repository/raw/public/badges/stackoverflow/fiware.svg)](https://stackoverflow.com/questions/tagged/fiware)
+<br/>
+[![Documentation](https://img.shields.io/readthedocs/fiware-tutorials.svg)](https://fiware-tutorials.rtfd.io)
 
 
 これは、ロボット技術や極端に制約のあるデバイスで使用される RTPS (Real Time Publish Subscribe) の [Fast-RTPS](https://eprosima-fast-rtps.readthedocs.io) および [Micro-RTPS](http://micro-rtps.readthedocs.io) の入門チュートリアルです。FIWARE プラットフォームのイネーブラは、この低レベルの通信には直接関与していませんが、ロボッ・デバイスを FIWARE システムに接続する前に、プロトコルの完全な理解が必要です。
