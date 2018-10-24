@@ -88,7 +88,7 @@ Please ensure that you are using Docker version 18.03 or higher and Docker Compo
 ## Cygwin
 
 We will start up our services using a simple bash script. Windows users should download [cygwin](http://www.cygwin.com/) to provide a
-command line functionality similar to a Linux distribution on Windows.
+command-line functionality similar to a Linux distribution on Windows.
 
 
 
@@ -106,7 +106,7 @@ git clone git@github.com:Fiware/tutorials.Fast-RTPS-Micro-RTPS.git
 >**Note** The initial creation of Docker images can take up to fifteen minutes
 
 
-Thereafter, all services can be initialized from the command line by running the [services](https://github.com/Fiware/tutorials.Fast-RTPS-Micro-RTPS/blob/master/services) Bash script provided within the repository:
+Thereafter, all services can be initialized from the command-line by running the [services](https://github.com/Fiware/tutorials.Fast-RTPS-Micro-RTPS/blob/master/services) Bash script provided within the repository:
 
 ```console
 ./services start
@@ -231,7 +231,7 @@ To leave the containers and end interactive mode, run the following in each term
 ```console
 exit
 ```
- You will then return to the command line.
+ You will then return to the command-line.
 
 Other examples are available in the `examples` folder, which are beyond the scope of this tutorial. For more information, please refer to the [official Fast-RTPS documentation](http://eprosima-fast-rtps.readthedocs.io/en/latest/).
 
@@ -369,7 +369,7 @@ To leave the containers and end interactive mode, run the following:
 exit
 ```
 
- You will then return to the command line.
+ You will then return to the command-line.
 
 
 
