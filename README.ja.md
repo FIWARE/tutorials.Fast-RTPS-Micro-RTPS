@@ -8,7 +8,7 @@
 [![Documentation](https://img.shields.io/readthedocs/fiware-tutorials.svg)](https://fiware-tutorials.rtfd.io)
 
 
-これは、ロボット技術や極端に制約のあるデバイスで使用される RTPS (Real Time Publish Subscribe) の [Fast-RTPS](https://eprosima-fast-rtps.readthedocs.io) および [Micro-RTPS](http://micro-rtps.readthedocs.io) の入門チュートリアルです。FIWARE プラットフォームのイネーブラは、この低レベルの通信には直接関与していませんが、ロボッ・デバイスを FIWARE システムに接続する前に、プロトコルの完全な理解が必要です。
+これは、ロボット技術や極端に制約のあるデバイスで使用される RTPS (Real Time Publish Subscribe) の [Fast-RTPS](https://eprosima-fast-rtps.readthedocs.io) および [Micro-RTPS](http://micro-xrce-dds.readthedocs.io) の入門チュートリアルです。FIWARE プラットフォームのイネーブラは、この低レベルの通信には直接関与していませんが、ロボッ・デバイスを FIWARE システムに接続する前に、プロトコルの完全な理解が必要です。
 
 このチュートリアルでは、[Docker](https://www.docker.com) コンテナから直接実行できる一連の演習を紹介していますが、HTTP コールは必要ありません。
 
@@ -54,7 +54,7 @@ eProsima Fast RTPS は、これらの重要なケースを含む多くの分野�
 <a name="what-is-micro-rtps"></a>
 # Micro-RTPS とは？
 
-RTPS (Real Time Publish Subscribe) 用の [eProsima](http://www.eprosima.com/) [Micro-RTPS](http://micro-rtps.readthedocs.io) プロトコルは、ロボティクスや非常に制約の厳しいデバイスで使用されています。これは、非常に限られたリソース制約環境 (eXtremely Resource Constrained Environments : XRCEs) と DDS ネットワーク間のパブリッシャとサブスクライバの通信を提供するソフトウェア・ソリューションです。特に、Micro-RTPS は、リソース制約のあるデバイス (クライアント) が DDS 通信に参加できるようにするクライアント/サーバのプロトコルを実装しています。Micro-RTPS エージェント (サーバ) は、Micro-RTPS クライアントに代わって動作し、DDS グローバル・データ・スペース内の DDS パブリッシャおよび/またはサブスクライバとして参加できるようにして、この通信を可能にします。
+RTPS (Real Time Publish Subscribe) 用の [eProsima](http://www.eprosima.com/) [Micro-RTPS](http://micro-xrce-dds.readthedocs.io) プロトコルは、ロボティクスや非常に制約の厳しいデバイスで使用されています。これは、非常に限られたリソース制約環境 (eXtremely Resource Constrained Environments : XRCEs) と DDS ネットワーク間のパブリッシャとサブスクライバの通信を提供するソフトウェア・ソリューションです。特に、Micro-RTPS は、リソース制約のあるデバイス (クライアント) が DDS 通信に参加できるようにするクライアント/サーバのプロトコルを実装しています。Micro-RTPS エージェント (サーバ) は、Micro-RTPS クライアントに代わって動作し、DDS グローバル・データ・スペース内の DDS パブリッシャおよび/またはサブスクライバとして参加できるようにして、この通信を可能にします。
 
 <a name="prerequisites"></a>
 # 前提条件
@@ -361,7 +361,7 @@ exit
 ```
 その後、コマンドラインに戻ります。
 
-その他の例は `examples` フォルダにありますが、このチュートリアルの範囲を超えています。詳細については、[Micro-RTPS の公式ドキュメント](http://micro-rtps.readthedocs.io/en/latest/)を参照してください。
+その他の例は `examples` フォルダにありますが、このチュートリアルの範囲を超えています。詳細については、[Micro-RTPS の公式ドキュメント](http://micro-xrce-dds.readthedocs.io/en/latest/)を参照してください。
 
 <a name="next-steps"></a>
 # 次のステップ
