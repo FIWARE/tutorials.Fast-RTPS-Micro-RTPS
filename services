@@ -32,10 +32,8 @@ case "${command}" in
 		stoppingContainers
 		;;
 	"create")
-		echo "Recreate Fast-RTPS examples"
-		docker build -t fiware/fast-rtps-examples ./fast-rtps
-		echo "Recreate Micro-RTPS examples"
-		docker build -t fiware/micro-rtps-examples ./micro-rtps
+		echo "Building Docker images"
+		docker-compose --log-level ERROR -p fiware build
 		;;
 	*)
 		echo "Command not Found."
