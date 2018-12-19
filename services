@@ -33,7 +33,7 @@ case "${command}" in
 		;;
 	"create")
 		echo "Building Docker images"
-		docker-compose --log-level ERROR -p fiware build
+		docker-compose --log-level ERROR -p fiware build --no-cache --parallel --pull
 		;;
 	*)
 		echo "Command not Found."
