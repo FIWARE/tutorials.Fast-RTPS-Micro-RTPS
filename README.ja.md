@@ -17,7 +17,10 @@ Publish Subscribe) の [Fast-RTPS](https://eprosima-fast-rtps.readthedocs.io) �
 このチュートリアルでは、[Docker](https://www.docker.com) コンテナから直接実行で
 きる一連の演習を紹介していますが、HTTP コールは必要ありません。
 
-# 内容
+## 内容
+
+<details>
+<summary>詳細 <b>(クリックして拡大)</b></summary>
 
 -   [Fast-RTPS とは？](#what-is-fast-rtps)
 -   [Micro-RTPS とは？](#what-is-micro-rtps)
@@ -36,6 +39,8 @@ Publish Subscribe) の [Fast-RTPS](https://eprosima-fast-rtps.readthedocs.io) �
         -   [Micro-RTPS サブスクライバを起動 (:two:nd ターミナル)](#start-the-micro-rtps-subscriber-twond-terminal)
         -   [Micro-RTPS パブリッシャを起動 (:three:rd ターミナル)](#start-the-micro-rtps-publisher-threerd-terminal)
 -   [次のステップ](#next-steps)
+
+</details>
 
 <a name="what-is-fast-rtps"></a>
 

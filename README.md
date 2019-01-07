@@ -20,7 +20,10 @@ within a [Docker](https://www.docker.com) container, no HTTP calls are required.
 
 -   このチュートリアルは[日本語](README.ja.md)でもご覧いただけます。
 
-# Contents
+## Contents
+
+<details>
+<summary><strong>Details</strong></summary>
 
 -   [What is Fast-RTPS?](#what-is-fast-rtps)
 -   [What is Micro-RTPS?](#what-is-micro-rtps)
@@ -39,6 +42,8 @@ within a [Docker](https://www.docker.com) container, no HTTP calls are required.
         -   [Start the Micro-RTPS Subscriber (:two:nd Terminal)](#start-the-micro-rtps-subscriber-twond-terminal)
         -   [Start the Micro-RTPS Publisher (:three:rd Terminal)](#start-the-micro-rtps-publisher-threerd-terminal)
 -   [Next Steps](#next-steps)
+
+</details>
 
 # What is Fast-RTPS?
 
