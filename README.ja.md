@@ -7,6 +7,8 @@
 <br/>
 [![Documentation](https://img.shields.io/readthedocs/fiware-tutorials.svg)](https://fiware-tutorials.rtfd.io)
 
+<!-- prettier-ignore -->
+
 これは、ロボット技術や極端に制約のあるデバイスで使用される RTPS (Real Time
 Publish Subscribe) の [Fast-RTPS](https://eprosima-fast-rtps.readthedocs.io) お
 よび [Micro-RTPS](http://micro-xrce-dds.readthedocs.io) の入門チュートリアルです
