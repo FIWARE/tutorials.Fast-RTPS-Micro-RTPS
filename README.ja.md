@@ -150,7 +150,7 @@ Docker バージョン 18.03 以降と Docker Compose 1.21 以上を使用して
 インストールを開始するには、次の手順を実行します :
 
 ```console
-git clone https://github.com/FIWARE/tutorials.Fast-RTPS-Micro-RTPS.git
+git clone git@github.com:FIWARE/tutorials.Fast-RTPS-Micro-RTPS.git
 
 ./services create
 ```

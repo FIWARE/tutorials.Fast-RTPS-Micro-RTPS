@@ -113,7 +113,7 @@ to provide a command-line functionality similar to a Linux distribution on Windo
 To start the installation, do the following:
 
 ```console
-git clone https://github.com/FIWARE/tutorials.Fast-RTPS-Micro-RTPS.git
+git clone git@github.com:FIWARE/tutorials.Fast-RTPS-Micro-RTPS.git
 
 ./services create
 ```
