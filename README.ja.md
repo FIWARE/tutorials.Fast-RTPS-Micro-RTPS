@@ -480,4 +480,4 @@ exit
 
 ## License
 
-[MIT](LICENSE) © 2018-2019 FIWARE Foundation e.V.
+[MIT](LICENSE) © 2018-2020 FIWARE Foundation e.V.
