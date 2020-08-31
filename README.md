@@ -114,6 +114,8 @@ To start the installation, do the following:
 
 ```console
 git clone https://github.com/FIWARE/tutorials.Fast-RTPS-Micro-RTPS.git
+cd tutorials.Fast-RTPS-Micro-RTPS
+git checkout NGSI-v2
 
 ./services create
 ```

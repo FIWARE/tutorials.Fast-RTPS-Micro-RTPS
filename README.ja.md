@@ -151,6 +151,8 @@ Docker バージョン 18.03 以降と Docker Compose 1.21 以上を使用して
 
 ```console
 git clone https://github.com/FIWARE/tutorials.Fast-RTPS-Micro-RTPS.git
+cd tutorials.Fast-RTPS-Micro-RTPS
+git checkout NGSI-v2
 
 ./services create
 ```
