@@ -160,7 +160,7 @@ git checkout NGSI-v2
 > **注** Docker イメージの最初の作成には最大 15 分かかります
 
 その後、リポジトリ内で提供される
-[services](https://github.com/FIWARE/tutorials.Fast-RTPS-Micro-RTPS/blob/master/services)
+[services](https://github.com/FIWARE/tutorials.Fast-RTPS-Micro-RTPS/blob/NGSI-v2/services)
 Bash スクリプトを実行することによって、コマンドラインからすべてのサービスを初期
 化することができます :
 

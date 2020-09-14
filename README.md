@@ -123,7 +123,7 @@ git checkout NGSI-v2
 > **Note** The initial creation of Docker images can take up to fifteen minutes
 
 Thereafter, all services can be initialized from the command-line by running the
-[services](https://github.com/FIWARE/tutorials.Fast-RTPS-Micro-RTPS/blob/master/services) Bash script provided within
+[services](https://github.com/FIWARE/tutorials.Fast-RTPS-Micro-RTPS/blob/NGSI-v2/services) Bash script provided within
 the repository:
 
 ```console
